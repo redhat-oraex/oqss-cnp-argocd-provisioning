@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea
+spec:
+  destination:
+    name: ''
+    namespace: oqss-testes
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ci-tools/gitea/helm
+    repoURL: 'https://github.com/redhat-oraex/oqss-cicd-manifests'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
