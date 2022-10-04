@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: ci-tools/gitea/helm
-    repoURL: 'http://gitea.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cicd-manifests'
+    repoURL: 'https://github.com/redhat-oraex/oqss-cnp-manifests'
     targetRevision: HEAD
   project: default
   syncPolicy:

@@ -10,4 +10,4 @@ echo
 oc delete project oqss-dev
 oc delete project oqss-hom
 oc delete project oqss-prod
-oc delete project oqss-testes
+oc delete project oqss-cicd

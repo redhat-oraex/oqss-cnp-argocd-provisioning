@@ -5,11 +5,11 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: oqss-testes
+    namespace: oqss-cicd
     server: 'https://kubernetes.default.svc'
   source:
     path: ci-tools/sonarqube/helm
-    repoURL: 'https://github.com/redhat-oraex/oqss-cicd-manifests'
+    repoURL: 'http://gitea.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cicd-manifests'
     targetRevision: HEAD
   project: default
   syncPolicy:
