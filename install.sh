@@ -43,4 +43,4 @@ argocd app create -f oqss-cicd/nexus.yaml
 argocd app create -f oqss-cicd/sonarqube.yaml
 argocd app create -f oqss-cicd/pipeline.yaml
 
-argocd app patch gitea --patch '{"spec": { "source": { "repoURL": "http://gitea-oqss-cicd.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cicd-manifests" } }}' --type merge
+argocd app patch gitea --patch '{"spec": { "source": { "repoURL": "http://gitea-oqss-cicd.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cnp-manifests" } }}' --type merge
