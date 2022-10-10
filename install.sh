@@ -17,13 +17,13 @@ oc label namespace oqss-cicd argocd.argoproj.io/managed-by=${ARGOCD_NS}
 oc adm policy add-role-to-user edit system:serviceaccount:oqss-dev:pipeline -n oqss-dev
 oc adm policy add-role-to-user edit system:serviceaccount:oqss-hom:pipeline -n oqss-hom
 oc adm policy add-role-to-user edit system:serviceaccount:oqss-prod:pipeline -n oqss-prod
-oc adm policy add-role-to-user edit system:serviceaccount:oqss-prod:pipeline -n oqss-cicd
+oc adm policy add-role-to-user edit system:serviceaccount:oqss-cicd:pipeline -n oqss-cicd
 
 # ATRIBUINDO A PERMISSÃO "IMAGE-PULLER" PARA A SERVICE ACCOUNT DO OPENSHIFT PIPELINES
 oc policy add-role-to-user system:image-puller system:serviceaccount:oqss-dev:pipeline -n oqss-dev
 oc policy add-role-to-user system:image-puller system:serviceaccount:oqss-hom:pipeline -n oqss-hom
 oc policy add-role-to-user system:image-puller system:serviceaccount:oqss-prod:pipeline -n oqss-prod
-oc policy add-role-to-user system:image-puller system:serviceaccount:oqss-prod:pipeline -n oqss-cicd
+oc policy add-role-to-user system:image-puller system:serviceaccount:oqss-cicd:pipeline -n oqss-cicd
 
 # INSTACIANDO APPLICATIONS NO ARGOCD
 
@@ -40,3 +40,7 @@ oc wait --for=condition=complete job/${SETUP_GITEA_JOB_NAME} --timeout=600s
 argocd app create -f oqss-cicd/nexus.yaml
 argocd app create -f oqss-cicd/sonarqube.yaml
 argocd app create -f oqss-cicd/pipeline.yaml
+
+argocd app create -f oqss-dev/application-dev.yaml
+argocd app create -f oqss-hom/application-hom.yaml
+argocd app create -f oqss-prod/application-prod.yaml

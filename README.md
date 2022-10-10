@@ -1,1 +1,1 @@
-# oqss-cnp-provisioning
+# oqss-cnp-argocd-provisioning

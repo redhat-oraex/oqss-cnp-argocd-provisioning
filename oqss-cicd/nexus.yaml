@@ -8,7 +8,7 @@ spec:
     namespace: oqss-cicd
     server: 'https://kubernetes.default.svc'
   source:
-    path: ci-tools/nexus/helm
+    path: oqss-cicd/nexus/helm
     repoURL: 'http://gitea-oqss-cicd.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cnp-gitops'
     targetRevision: HEAD
   project: default
