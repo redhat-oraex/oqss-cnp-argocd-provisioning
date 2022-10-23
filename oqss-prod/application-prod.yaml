@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: oqss-prod
-    repoURL: 'http://gitea-oqss-cicd.apps.cluster-jx6jr.jx6jr.sandbox760.opentlc.com/gitea-admin/oqss-cnp-gitops'
+    repoURL: 'http://gitea-oqss-cicd.apps.middleware.rhbr-lab.com/gitea-admin/oqss-cnp-gitops'
     targetRevision: HEAD
   project: default
   syncPolicy:
